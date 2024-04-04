@@ -5,6 +5,7 @@
 package web;
 
 import dao.ProduitDao;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -69,7 +70,11 @@ public class ProduitServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       // processRequest(request, response);
+       request.setAttribute("produits", produitdao.afficherProduits());
+       RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+       view.forward(request, response);
+       
     }
 
     /**
