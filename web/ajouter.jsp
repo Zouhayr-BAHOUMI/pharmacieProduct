@@ -40,14 +40,14 @@
 
 
         <h4>Ajouter produit</h4>
-        <form method="post" action="">
+        <form method="post" action="ProduitServlet">
         <div class="container forn-dlt">
         <div class="row g-3 align-items-center">
           <div class="col-auto col-lg-4">
-            <label for="inputPassword6" class="col-form-label">Nom d'article:</label>
+            <label for="inputPassword6"  class="col-form-label">Nom d'article:</label>
           </div>
           <div class="col-auto col-lg-8">
-            <input type="text" id="inputPassord6" class="form-control" aria-describedby="passwordHelpInline">
+            <input type="text" id="inputPassord6" name="article" class="form-control" aria-describedby="passwordHelpInline">
           </div>
         </div>
 
@@ -56,7 +56,7 @@
             <label for="inputPassword6" class="col-form-label">Quantity :</label>
           </div>
           <div class="col-auto col-lg-8">
-            <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+            <input type="text" id="inputPassword6" name="quantity" class="form-control" aria-describedby="passwordHelpInline">
           </div>
         </div>
 
@@ -65,7 +65,7 @@
             <label for="inputPassword6" class="col-form-label">Prix du produit :</label>
           </div>
           <div class="col-auto col-lg-8">
-            <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+            <input type="text" id="inputPassword6" name="prix" class="form-control" aria-describedby="passwordHelpInline">
           </div>
         </div>
            
@@ -75,7 +75,7 @@
             <label for="inputPassword6" class="col-form-label">Description : </label>
           </div>
           <div class="col-auto col-lg-8">
-            <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+            <input type="text" id="inputPassword6" name="description" class="form-control" aria-describedby="passwordHelpInline">
           </div>
         </div>
 

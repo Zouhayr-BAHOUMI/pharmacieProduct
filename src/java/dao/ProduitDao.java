@@ -4,10 +4,36 @@
  */
 package dao;
 
+import Db.dbConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Produit;
 /**
  *
  * @author user
  */
 public class ProduitDao {
+    Connection connect;
     
+    public ProduitDao(){
+        connect = dbConnection.getConnection();
+    }
+    
+    public void ajouterProduit (Produit produit){
+        try {
+            PreparedStatement prstmt = connect.prepareStatement("INSERT INTO Produit (nom_article, quantite, prix, description)"
+                    + " VALUES (?, ?, ?, ?)");
+            prstmt.setString(1, produit.getNom_article());
+            prstmt.setInt(2,produit.getQuantite());
+            prstmt.setDouble(3, produit.getPrix());
+            prstmt.setString(4, produit.getNom_article());
+            
+            prstmt.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProduitDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
