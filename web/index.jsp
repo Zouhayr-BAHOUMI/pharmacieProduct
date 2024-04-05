@@ -115,6 +115,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Nom article</th>
                                 <th>Quantity</th>
                                 <th>Prix</th>
@@ -123,8 +124,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                             <c:forEach var="produit" items="${produits}">
+                             <c:forEach items="${produits }" var="produit" >
                             <tr>
+                                <td><c:out value="${produit.id_produit}"/></td>
                                 <td><c:out value="${produit.nom_article}"/></td>
                                 <td><c:out value="${produit.quantite}"/></td>
                                 <td><c:out value="${produit.prix}"/></td>

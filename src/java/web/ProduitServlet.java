@@ -71,8 +71,8 @@ public class ProduitServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        // processRequest(request, response);
-       request.setAttribute("produits", produitdao.afficherProduits());
        RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+       request.setAttribute("produits", produitdao.afficherProduits());
        view.forward(request, response);
        
     }
